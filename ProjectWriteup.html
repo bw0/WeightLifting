@@ -66,7 +66,85 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><p>A classifier was created using Random Forest and correctly predicted the 20 externally-graded test cases.</p></li>
 <li><p>A variety of techniques were applied and validations were performed in the development and testing of the final model.</p></li>
 </ul>
-<p>Latest change</p>
+</div>
+<div id="the-data" class="section level2">
+<h2>The Data</h2>
+<ul>
+<li>Two sets of data were provided as spreadsheets. Both contained 160 variables. The training data contained 19,622 records, the quiz test set (for external grading) contained 20 records.</li>
+<li>The data had 7 identification columns (timestamps, record number, etc.), 152 predictor columns and 1 classification variable with 5 values, classe, to be predicted.</li>
+<li>All columns that contained NAs or blank values were immediately removed, as they provide no predictive value. These columns contained no values other than NA or blank, so interpolation was not a consideration. This left 52 predictor columns.</li>
+</ul>
+</div>
+<div id="other-efforts" class="section level2">
+<h2>Other efforts</h2>
+<div id="tree-models" class="section level3">
+<h3>Tree models</h3>
+<p>An attempt was made to use tree models. The training data was split into training/testing sets, in 10% increments from 10/90 training/testing to 90/10 training/testing. Models were fit at each of these increments and tested on the training and test sets. The resulst were uniformly poor, with the best results at a 50/50 split. Though discarded as a model, the info is inetresting:</p>
+<div id="accuracy-of-trees-at-different-training-testing-splits-vs-training-and-testing-sets" class="section level4">
+<h4>Accuracy of trees at different training / testing splits vs training and testing sets</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">% Training</th>
+<th align="left">Train Acc</th>
+<th align="left">Test Acc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">0.5458</td>
+<td align="left">0.519</td>
+</tr>
+<tr class="even">
+<td align="left">20</td>
+<td align="left">0.5628</td>
+<td align="left">0.5634</td>
+</tr>
+<tr class="odd">
+<td align="left">30</td>
+<td align="left">0.5171</td>
+<td align="left">0.515</td>
+</tr>
+<tr class="even">
+<td align="left">40</td>
+<td align="left">0.5745</td>
+<td align="left">0.5703</td>
+</tr>
+<tr class="odd">
+<td align="left">50</td>
+<td align="left">0.5744</td>
+<td align="left">0.5713</td>
+</tr>
+<tr class="even">
+<td align="left">60</td>
+<td align="left">0.5669</td>
+<td align="left">0.5565</td>
+</tr>
+<tr class="odd">
+<td align="left">70</td>
+<td align="left">0.5527</td>
+<td align="left">0.5458</td>
+</tr>
+<tr class="even">
+<td align="left">80</td>
+<td align="left">0.5535</td>
+<td align="left">0.5427</td>
+</tr>
+<tr class="odd">
+<td align="left">90</td>
+<td align="left">0.5535</td>
+<td align="left">0.5434</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="acknowledgement" class="section level2">
+<h2>Acknowledgement</h2>
+<p>The data was generously made available by: Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human ’13) . Stuttgart, Germany: ACM SIGCHI, 2013.</p>
+<p>Read more: <a href="http://groupware.les.inf.puc-rio.br/har#ixzz38gQulnz0">http://groupware.les.inf.puc-rio.br/har#ixzz38gQulnz0</a></p>
 </div>
 
 

@@ -15,4 +15,36 @@ output: html_document
 ```{r, init, echo=FALSE,results='hide'}
 setwd("C:/MOOCs/Coursera/Current/Practical Machine Learning/Project")
 ```
-Latest change
+## The Data
+
+- Two sets of data were provided as spreadsheets. Both contained 160 variables. The training data contained 19,622 records, the quiz test set (for external grading) contained 20 records.
+- The data had 7 identification columns (timestamps, record number, etc.), 152 predictor columns and 1 classification variable with 5 values, classe, to be predicted.
+- All columns that contained NAs or blank values were immediately removed, as they provide no predictive value. These columns contained no values other than NA or blank, so interpolation was not a consideration. This left 52 predictor columns.
+
+## Other efforts
+### Tree models
+
+An attempt was made to use tree models. The training data was split into training/testing sets, in 10% increments from 10/90 training/testing to 90/10 training/testing. Models were fit at each of these increments and tested on the training and test sets. The resulst were uniformly poor, with the best results at a 50/50 split. Though discarded as a model, the info is interesting:
+
+#### Accuracy of trees at different training / testing splits vs training and testing sets
+
+% Training | Train Acc | Test Acc  
+---------- | --------- | --------   
+10 | 0.5458 | 0.519  
+20 | 0.5628 | 0.5634  
+30 | 0.5171 | 0.515  
+40 | 0.5745 | 0.5703  
+50 | 0.5744 | 0.5713  
+60 | 0.5669 | 0.5565  
+70 | 0.5527 | 0.5458  
+80 | 0.5535 | 0.5427  
+90 | 0.5535 | 0.5434  
+
+
+
+
+## Acknowledgement
+The data was generously made available by:
+Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013.
+
+Read more: http://groupware.les.inf.puc-rio.br/har#ixzz38gQulnz0
