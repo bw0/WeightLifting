@@ -1,0 +1,18 @@
+---
+title: "Weight Lifting Error Classification"
+author: "bw0"
+date: "Sunday, July 27, 2014"
+output: html_document
+---
+## Summary
+
+- The project task is to provide a classifier that, when given the specified body-worn motion sensor data, determines if the motion is a specific correctly performed weight lifting exercise, or one of four specified incorrect executions of that exercise.
+
+- A classifier was created using Random Forest and correctly predicted the 20 externally-graded test cases.
+
+- A variety of techniques were applied and validations were performed in the development and testing of the final model.
+
+```{r, init, echo=FALSE,results='hide'}
+setwd("C:/MOOCs/Coursera/Current/Practical Machine Learning/Project")
+```
+Latest change
